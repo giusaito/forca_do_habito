@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Categoria;
 use App\Http\Resources\Categoria as CategoriaResource;
 use App\Http\Resources\CategoriaCollection;
+use Illuminate\Support\Str;
 
 class CategoriasController extends Controller
 {
@@ -29,8 +30,8 @@ class CategoriasController extends Controller
             'nome.required'         => 'Por favor, escreva o nome da categoria',
             'nome.max'              => 'O nome da categoria pode ter no máximo 255 caracteres'
         ]);
-
-        $categoria = Categoria::create($request->all());
+        $data = array_merge($request->all(), ['slug' => Str::slug($request->nome)]);
+        $categoria = Categoria::create($data);
 
         return response()->json([
             'message'=>'Categoria cadastrada com sucesso!'
