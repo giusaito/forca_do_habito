@@ -17,6 +17,7 @@ class Categoria extends JsonResource
         return [
             'id'         => $this->id,
             'nome'       => $this->nome,
+            'slug'       => $this->slug,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
