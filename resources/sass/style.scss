@@ -1,0 +1,88 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+$primary: rgb(64,142,186);
+$secondary: rgb(57, 127, 167);
+$success: #00a65a;
+$danger: #dd4b39;
+$breadcrumb-divider: quote(">");
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "danger": $danger
+);
+$utilities-bg-colors: (
+    "primary": $primary,
+);
+
+body {
+    background-color: #ecf0f5 !important;
+}
+
+.navbar-light {
+    .navbar-nav {
+        .nav-item {
+            margin: -0.5rem 0;
+            padding: 0.5rem 0;
+            &.show {
+                background-color: $secondary;
+            }
+            .nav-link {
+                color:#fff !important;
+            }
+        }
+    }
+    .navbar-brand {
+        &:hover {
+            color:#fbff07 !important;
+        }
+    }
+}
+.dropdown-item.active, .dropdown-item:active {
+    background-color: $primary !important;
+    color:#fff !important;
+}
+a {
+    text-decoration: none !important;
+    color: #444444 !important;
+    &:hover {
+        color:$primary !important;
+    }
+}
+.btn {
+    color:#fff !important;
+    &:hover {
+        color:#fff !important;
+    }
+}
+.table { 
+    color:#444444 !important;
+    & > :not(:first-child) {
+        border-top:2px solid #dee2e6 !important;
+    }
+}
+.card {
+    .card-header {
+        background-color: #fff !important;
+        color:#444444 !important;
+        font-size: 1.2rem !important;
+        &:first-child {
+            border-top:4px solid #d2d6de !important;
+        }
+    }
+}
+.form-label {
+    font-weight: 900;
+}
+.cadastro {
+    .breadcrumb {
+        background-color: #d2d6de !important;
+        padding:10px !important;
+        margin: 2rem;
+    }
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap";

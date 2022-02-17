@@ -7,6 +7,12 @@ import React, { Component } from 'react'
     import ListarCategorias from "./categorias/list.component";
     import AdicionarCategoria from "./categorias/create.component";
 
+    import EditarCliente from "./clientes/edit.component";
+    import ListarClientes from "./clientes/list.component";
+    import AdicionarCliente from "./clientes/create.component";
+
+    import '../../../public/css/style.css';
+
     class App extends Component {
       render () {
         return (
@@ -17,6 +23,9 @@ import React, { Component } from 'react'
                 <Route path="/categoria/create" element={<AdicionarCategoria />} />
                 <Route path="/categoria/edit/:id" element={<EditarCategoria />} />
                 <Route exact path='/categorias' element={<ListarCategorias />} />
+                <Route path="/cliente/create" element={<AdicionarCliente />} />
+                <Route path="/cliente/edit/:id" element={<EditarCliente />} />
+                <Route exact path='/clientes' element={<ListarClientes />} />
               </Routes>
             </div>
           </Router>
